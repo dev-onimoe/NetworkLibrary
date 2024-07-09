@@ -14,7 +14,6 @@ https://github.com/dev-onimoe/NetworkLibrary.git
 
 ```
         var query = url
-        print(query)
         guard let url = URL(string: query) else {return}
         let session = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
             //Utility.hideProgressHUD()
