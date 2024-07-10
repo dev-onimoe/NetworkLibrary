@@ -12,19 +12,18 @@ https://github.com/dev-onimoe/NetworkLibrary.git
 
 ## Usage
 
+Pass a url string and a completion handler into the makeCall() function like below
+
 ```
-        var query = url
-        guard let url = URL(string: query) else {return}
-        let session = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
-            //Utility.hideProgressHUD()
-            if let err = error {
+        let query = url + "a" + appendage
+        
+        NetworkLibrary.shared.makeCall(url: query, completion: {[weak self] data, errorString in
+            
+            if let resData = data {
                 
-                completion(nil, err.localizedDescription)
                 
             }else {
-                
-                //
-                
+                print(errorString)
             }
-        }).resume()
+        })
 ```
